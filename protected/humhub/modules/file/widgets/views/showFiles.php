@@ -26,16 +26,16 @@ use yii\helpers\Html;
                         <?= $previewImage->render(); ?>
                     </a>
                 <?php elseif(FileHelper::getExtension($file->file_name) == 'webm'): ?>
-                    <a data-ui-gallery="<?= "gallery-" . $object->getUniqueId(); ?>" type="video/webm" href="<?= $file->getUrl(); ?>#.webm" title="<?= Html::encode($file->file_name) ?>">
-                        <video src="<?= $file->getUrl() ?>" preload="metadata" height="130"></video>
+                    <a data-ui-gallery="<?= "gallery-" . $object->getUniqueId(); ?>" href="<?= $file->getUrl(); ?>#.webm" title="<?= Html::encode($file->file_name) ?>">
+                        <video controls src="<?= $file->getUrl() ?>" preload="metadata" height="130" type="video/webm"></video>
                     </a>
                 <?php elseif(FileHelper::getExtension($file->file_name) == 'mp4'): ?>
-                    <a data-ui-gallery="<?= "gallery-" . $object->getUniqueId(); ?>" type="video/mp4" href="<?= $file->getUrl(); ?>#.mp4" title="<?= Html::encode($file->file_name) ?>">
-                        <video src="<?= $file->getUrl() ?>" preload="metadata" height="130"></video>
+                    <a data-ui-gallery="<?= "gallery-" . $object->getUniqueId(); ?>" href="<?= $file->getUrl(); ?>#.mp4" title="<?= Html::encode($file->file_name) ?>">
+                        <video controls src="<?= $file->getUrl() ?>" preload="metadata" height="130" type="video/mp4"></video>
                     </a>
                 <?php elseif(FileHelper::getExtension($file->file_name) == 'ogv'): ?>
-                    <a data-ui-gallery="<?= "gallery-" . $object->getUniqueId(); ?>" type="video/ogg" href="<?= $file->getUrl(); ?>#.ogv" title="<?= Html::encode($file->file_name) ?>">
-                        <video src="<?= $file->getUrl() ?>" preload="metadata" height="130"></video>
+                    <a data-ui-gallery="<?= "gallery-" . $object->getUniqueId(); ?>" href="<?= $file->getUrl(); ?>#.ogv" title="<?= Html::encode($file->file_name) ?>">
+                        <video controls src="<?= $file->getUrl() ?>" preload="metadata" height="130" type="video/ogg"></video>
                     </a>
                 <?php endif; ?>
             <?php endforeach; ?>
